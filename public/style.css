@@ -13,6 +13,10 @@
     @content;
   }
 } */
+
+
+
+
 body{
     margin: 0 0 0 0;
 }
@@ -198,16 +202,32 @@ font-size: 14px;
     cursor: pointer;
 }
 .messagediv{
-    height: calc(100%-100%);
+    height: calc(100% - 140px);
 
 }
 .messages{
     background-color: #ddddf7;
     height: 100%;
-    padding: 10px;
-    /* overflow: scroll; */
-
+    padding-right: 10px;
+    padding-left: 10px;
+    overflow-y: auto;
 }
+
+
+.messages::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  .messages::-webkit-scrollbar-track {
+    background-color: #e4e4e4;
+    border-radius: 100px;
+  }
+  
+  .messages::-webkit-scrollbar-thumb {
+    background-color: #5d5b8d;
+    border-radius: 100px;
+  }
+
 .inputs{
     height: 50px;
     background-color: white;
