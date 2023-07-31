@@ -183,6 +183,7 @@ font-size: 14px;
     font-weight: 500;
 }
 
+
 .chatinfo{
  height: 50px;
  background-color: #5d5b8d;
@@ -196,13 +197,14 @@ font-size: 14px;
 .chaticons{
     display: flex;
     gap: 10px;
+    size: 30px;
 }
 .chaticons img{
     height: 24px;
     cursor: pointer;
 }
 .messagediv{
-    height: calc(100% - 140px);
+    height: calc(100% - 130px);
 
 }
 .messages{
@@ -229,7 +231,7 @@ font-size: 14px;
   }
 
 .inputs{
-    height: 50px;
+    height: 40px;
     background-color: white;
     padding: 10px;
     display: flex;

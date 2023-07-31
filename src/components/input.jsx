@@ -1,14 +1,17 @@
 import React from "react";
 
+import AttachFileIcon from '@mui/icons-material/AttachFile';
+import AddPhotoAlternateIcon from '@mui/icons-material/AddPhotoAlternate';
+
 const input=()=>{
    return (
     <div className="inputs">
     <input type="text" placeholder="Type something...."/>
     <div className="send">
-    <img src="a" alt="a"/>
+    <AttachFileIcon/>
     <input type="file" style={{display:"none"}} id="file"/>
     <label htmlFor="file">
-        <img src="a" alt="a"/>
+        <AddPhotoAlternateIcon/>
     </label>
 <button>Send</button>
     </div>
