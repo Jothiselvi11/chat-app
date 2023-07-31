@@ -2,45 +2,48 @@ import React, { useState } from "react";
 import { useNavigate,Link } from "react-router-dom";
 import {  signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase";
-
-
+import toast, { Toaster } from 'react-hot-toast';
 
 
 const Login = ()=>{
     const [err, setErr] = useState(false);
-    const navigate = useNavigate();
+    const navigate = useNavigate(); 
   
-    const handleSubmit = async (e) => {
+    const handleSubmit = async () => {
       
-      e.preventDefault();
-      const email = e.target[0].value;
-      const password = e.target[1].value;
+      // e.preventDefault();
+      const email = "asirwaadj@gmail.com";
+      const password = "Prakash475!";
 
   
       
-            try {
-              await  signInWithEmailAndPassword(auth, email, password) ;
-              navigate("/") 
+          
+              await  signInWithEmailAndPassword(auth, email, password).then((e) => {
+                 navigate("/")
+              }).catch((e) => {
+                alert(e)
+                // toast.error(e)
+              }) ;
+             
             
-      } catch (err) {
-        setErr(true);
-        
-      }
+     
+     
     };
     return (
         <div className="formContainer">
+       
         <div className="formWrapper">
         <span className="logo">JoJe Chat</span>
         <span className="title">Login</span>
-         <form className="rform">
-            <input type="email" placeholder="email"/> 
+         <div className="rform">
+            <input type="email"  placeholder="email"/> 
             <input type="password" placeholder="password"/> 
-            <button onSubmit={handleSubmit}>Sign In</button>
+            <button onClick={handleSubmit}>Sign In</button>
             {err && <span>something went wrong</span>}
-         </form>
+         </div>
          <p>New user <Link to="/register"> Register</Link></p>
         </div>
-
+        {/* <Toaster/> */}
         </div>
     )
 
